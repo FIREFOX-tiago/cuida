@@ -72,6 +72,33 @@ body {
 [data-theme="dark"] .btn-secondary:hover { background: #111827; }
 
 /* ========================================
+   DARK MODE - NOMES DE PACIENTES
+   ======================================== */
+[data-theme="dark"] .alert-patient { color: #e5e7eb; }
+[data-theme="dark"] .patient-name { color: #e5e7eb; }
+[data-theme="dark"] .comment-author { color: #e5e7eb; }
+[data-theme="dark"] .detail-value { color: #e5e7eb; }
+
+/* ========================================
+   REMOVER EFEITOS DE CURSOR NOS NOMES
+   ======================================== */
+.alert-patient,
+.patient-name,
+.comment-author,
+.detail-value {
+  cursor: default !important;
+}
+
+.alert-patient:hover,
+.patient-name:hover,
+.comment-author:hover,
+.detail-value:hover {
+  background-color: transparent !important;
+  transform: none !important;
+  color: inherit !important;
+}
+
+/* ========================================
    SISTEMA DE LAYOUT FIXO
    ======================================== */
 .app-container {
@@ -97,6 +124,60 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 24px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ========================================
+   CONTROLES DO HEADER
+   ======================================== */
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dark-mode-toggle {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #010101;
+  color: #64748b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  font-size: 16px;
+}
+
+.dark-mode-toggle:hover {
+  background: #e2e8f0;
+  color: #8b5cf6;
+  transform: translateY(-1px);
+}
+
+.dark-mode-toggle:active {
+  transform: translateY(0);
+}
+
+/* Dark mode styles for toggle button */
+[data-theme="dark"] .dark-mode-toggle {
+  background: #1f2937;
+  color: #ffffff;
+  border: 1px solid #010101;
+}
+
+[data-theme="dark"] .dark-mode-toggle:hover {
+  background: #232527;
+  color: #4c4c4c;
+  border: 1px solid #010101;
 }
 
 .app-logo {

@@ -9,7 +9,8 @@
     userProfile: 'cm_user_profile',
     patientProfile: 'cm_patient_profile',
     patientPhoto: 'cm_patient_photo',
-    userSettings: 'cm_user_settings'
+    userSettings: 'cm_user_settings',
+    darkMode: 'cm_dark_mode'
   };
 
   function updateDoctorUI() {
@@ -134,6 +135,51 @@
     if (userButton) userButton.classList.remove('active');
   }
 
+  // ========================================
+  // DARK MODE FUNCTIONS
+  // ========================================
+  
+  function initDarkMode() {
+    const isDarkMode = localStorage.getItem(STORAGE.darkMode) === 'true';
+    if (isDarkMode) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      updateDarkModeIcon(true);
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      updateDarkModeIcon(false);
+    }
+  }
+  
+  function updateDarkModeIcon(isDark) {
+    const icon = document.getElementById('darkModeIcon');
+    if (icon) {
+      icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+    }
+  }
+  
+  // Função global para alternar dark mode
+  function toggleDarkMode() {
+    const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark';
+    const newDarkMode = !isDarkMode;
+    
+    if (newDarkMode) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem(STORAGE.darkMode, 'true');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem(STORAGE.darkMode, 'false');
+    }
+    
+    updateDarkModeIcon(newDarkMode);
+  }
+
+  // Inicializar dark mode quando o DOM estiver pronto
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initDarkMode);
+  } else {
+    initDarkMode();
+  }
+
   // expor globalmente
   window.viewProfile = viewProfile;
   window.editProfile = editProfile;
@@ -141,6 +187,7 @@
   window.settings = settings;
   window.logout = logout;
   window.closeUserMenu = closeUserMenu;
+  window.toggleDarkMode = toggleDarkMode;
 })();
 
 

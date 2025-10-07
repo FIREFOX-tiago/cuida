@@ -33,12 +33,14 @@
 .patient-name {
   font-weight: 600;
   color: #0f172a;
+  cursor: default !important;
 }
 
 .patient-id {
   font-family: 'Courier New', monospace;
   color: #64748b;
   font-size: 12px;
+  cursor: default !important;
 }
 
 /* ========================================

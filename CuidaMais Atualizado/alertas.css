@@ -37,6 +37,7 @@
   font-size: 16px;
   color: #64748b;
   font-weight: 500;
+  cursor: default !important;
 }
 
 /* ========================================
@@ -166,17 +167,20 @@
   font-weight: 600;
   color: #0f172a;
   font-size: 14px;
+  cursor: default !important;
 }
 
 .comment-time {
   font-size: 12px;
   color: #64748b;
+  cursor: default !important;
 }
 
 .comment-text {
   color: #374151;
   line-height: 1.5;
   font-size: 14px;
+  cursor: default !important;
 }
 
 /* ========================================
@@ -222,12 +226,14 @@
   font-size: 14px;
   font-weight: 600;
   color: #374151;
+  cursor: default !important;
 }
 
 .detail-value {
   font-size: 14px;
   color: #64748b;
   line-height: 1.5;
+  cursor: default !important;
 }
 
 /* ========================================

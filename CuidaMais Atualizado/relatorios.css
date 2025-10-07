@@ -101,6 +101,7 @@
   font-weight: 700;
   color: #0f172a;
   margin-bottom: 4px;
+  cursor: default !important;
 }
 
 .stat-label {
@@ -108,12 +109,14 @@
   font-weight: 600;
   color: #374151;
   margin-bottom: 2px;
+  cursor: default !important;
 }
 
 .stat-description {
   font-size: 12px;
   color: #64748b;
   line-height: 1.4;
+  cursor: default !important;
 }
 
 /* ========================================
@@ -145,12 +148,14 @@
 .patient-name {
   font-weight: 600;
   color: #0f172a;
+  cursor: default !important;
 }
 
 .patient-id {
   font-family: 'Courier New', monospace;
   color: #64748b;
   font-size: 12px;
+  cursor: default !important;
 }
 
 /* ========================================
@@ -191,6 +196,7 @@
   font-size: 14px;
   line-height: 1.5;
   margin-bottom: 16px;
+  cursor: default !important;
 }
 
 .btn-export {

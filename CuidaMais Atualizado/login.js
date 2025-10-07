@@ -49,17 +49,27 @@ function validateEmail(email) {
 }
 
 function togglePassword() {
-  const passwordInput = document.querySelector('input[type="password"]');
-  const toggleButton = document.querySelector('.password-toggle i');
+  const passwordInput = document.querySelector('input[type="password"], input[type="text"]');
+  const toggleIcon = document.querySelector('.password-toggle i');
   
+  if (!passwordInput || !toggleIcon) {
+    console.error('Elementos de senha não encontrados');
+    return;
+  }
+  
+  // Lógica correta: olho aberto = senha visível, olho fechado = senha oculta
   if (passwordInput.type === 'password') {
+    // Mostrar senha - olho aberto (sem risco)
     passwordInput.type = 'text';
-    toggleButton.classList.remove('fa-eye');
-    toggleButton.classList.add('fa-eye-slash');
+    toggleIcon.classList.remove('fa-eye-slash');
+    toggleIcon.classList.add('fa-eye');
+    toggleIcon.title = 'Ocultar senha';
   } else {
+    // Ocultar senha - olho fechado (com risco)
     passwordInput.type = 'password';
-    toggleButton.classList.remove('fa-eye-slash');
-    toggleButton.classList.add('fa-eye');
+    toggleIcon.classList.remove('fa-eye');
+    toggleIcon.classList.add('fa-eye-slash');
+    toggleIcon.title = 'Mostrar senha';
   }
 }
 
@@ -168,6 +178,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // Verificar se há dados salvos
   checkRememberMe();
   
+  // Inicializar botão de senha
+  initializePasswordToggle();
+  
   // Efeitos de foco nos campos
   const inputs = document.querySelectorAll('.form-input');
   inputs.forEach(input => {
@@ -210,6 +223,46 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+// ========================================
+// INICIALIZAÇÃO DO BOTÃO DE SENHA
+// ========================================
+function initializePasswordToggle() {
+  const passwordInput = document.querySelector('input[type="password"]');
+  const toggleButton = document.querySelector('.password-toggle');
+  const toggleIcon = document.querySelector('.password-toggle i');
+  
+  if (passwordInput && toggleButton && toggleIcon) {
+    // Garantir que comece com olho fechado (senha oculta)
+    passwordInput.type = 'password';
+    toggleIcon.classList.remove('fa-eye');
+    toggleIcon.classList.add('fa-eye-slash');
+    toggleIcon.title = 'Mostrar senha';
+    
+    // Adicionar evento de clique mais robusto
+    toggleButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      togglePassword();
+    });
+    
+    // Adicionar evento de teclado para acessibilidade
+    toggleButton.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        togglePassword();
+      }
+    });
+    
+    // Tornar o botão focável
+    toggleButton.setAttribute('tabindex', '0');
+    toggleButton.setAttribute('role', 'button');
+    toggleButton.setAttribute('aria-label', 'Alternar visibilidade da senha');
+    
+  } else {
+    console.error('Erro ao inicializar botão de senha');
+  }
+}
 
 // ========================================
 // ESTILOS DINÂMICOS

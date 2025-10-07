@@ -36,6 +36,15 @@
   transition: all 0.2s ease;
 }
 
+.alert-item .alert-patient,
+.alert-item .alert-time {
+  cursor: default !important;
+}
+
+.alert-patient {
+  cursor: default !important;
+}
+
 .alert-item:last-child {
   border-bottom: none;
 }
@@ -45,6 +54,11 @@
   margin: 0 -24px;
   padding: 12px 24px;
   border-radius: 8px;
+}
+
+.alert-item:hover .alert-patient,
+.alert-item:hover .alert-time {
+  cursor: default !important;
 }
 
 .alert-info {
@@ -60,6 +74,7 @@
 .alert-time {
   font-size: 12px;
   color: #64748b;
+  cursor: default !important;
 }
 
 .alert-item i {
@@ -73,6 +88,11 @@
   transform: translateX(4px);
 }
 
+.alert-item:hover .alert-patient,
+.alert-item:hover .alert-time {
+  cursor: default !important;
+}
+
 .see-more-link {
   display: block;
   text-align: center;
@@ -83,6 +103,7 @@
   font-size: 14px;
   border-top: 1px solid #e2e8f0;
   transition: all 0.2s ease;
+  cursor: pointer !important;
 }
 
 .see-more-link:hover {
@@ -110,6 +131,11 @@
   transition: all 0.2s ease;
   text-align: left;
   width: 100%;
+}
+
+.action-btn .action-title,
+.action-btn .action-subtitle {
+  cursor: default !important;
 }
 
 .action-btn:hover {
@@ -145,11 +171,13 @@
   font-weight: 600;
   color: #0f172a;
   margin-bottom: 4px;
+  cursor: default !important;
 }
 
 .action-subtitle {
   font-size: 12px;
   color: #64748b;
+  cursor: default !important;
 }
 
 /* ========================================
@@ -168,17 +196,24 @@
   border-radius: 8px;
 }
 
+.stat-item .stat-number,
+.stat-item .stat-label {
+  cursor: default !important;
+}
+
 .stat-number {
   font-size: 24px;
   font-weight: 700;
   color: #8b5cf6;
   margin-bottom: 4px;
+  cursor: default !important;
 }
 
 .stat-label {
   font-size: 12px;
   color: #64748b;
   font-weight: 500;
+  cursor: default !important;
 }
 
 /* ========================================
@@ -194,6 +229,11 @@
   display: flex;
   align-items: flex-start;
   gap: 12px;
+}
+
+.activity-item .activity-text,
+.activity-item .activity-time {
+  cursor: default !important;
 }
 
 .activity-dot {
@@ -213,11 +253,13 @@
   color: #374151;
   margin-bottom: 4px;
   line-height: 1.4;
+  cursor: default !important;
 }
 
 .activity-time {
   font-size: 12px;
   color: #64748b;
+  cursor: default !important;
 }
 
 /* ========================================

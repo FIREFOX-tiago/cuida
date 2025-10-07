@@ -34,12 +34,14 @@
   font-weight: 700;
   color: #0f172a;
   margin-bottom: 4px;
+  cursor: default !important;
 }
 
 .patient-id {
   color: #64748b;
   font-size: 14px;
   margin-bottom: 24px;
+  cursor: default !important;
 }
 
 .patient-details {
@@ -70,12 +72,14 @@
   font-size: 14px;
   min-width: 100px;
   margin-right: 8px;
+  cursor: default !important;
 }
 
 .detail-value {
   color: #0f172a;
   font-weight: 600;
   font-size: 14px;
+  cursor: default !important;
 }
 
 /* ========================================
@@ -248,17 +252,20 @@
   font-weight: 600;
   color: #0f172a;
   font-size: 14px;
+  cursor: default !important;
 }
 
 .comment-date {
   color: #64748b;
   font-size: 12px;
+  cursor: default !important;
 }
 
 .comment-text {
   color: #374151;
   line-height: 1.5;
   font-size: 14px;
+  cursor: default !important;
 }
 
 /* ========================================

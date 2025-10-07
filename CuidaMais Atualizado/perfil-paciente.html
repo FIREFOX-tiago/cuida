@@ -22,7 +22,16 @@
   <!-- Header -->
   <header class="app-header">
     <a href="#" class="app-logo">Cuida Mais</a>
-    <div class="app-user" onclick="toggleUserMenu()">
+    
+    <!-- Header Right Controls -->
+    <div class="header-right">
+      <!-- Dark Mode Toggle -->
+      <button class="dark-mode-toggle" onclick="toggleDarkMode()" title="Alternar modo escuro">
+        <i class="fas fa-moon" id="darkModeIcon"></i>
+      </button>
+      
+      <!-- User Profile -->
+      <div class="app-user" onclick="toggleUserMenu()">
       <div class="user-avatar">
         <i class="fas fa-user"></i>
       </div>
@@ -31,6 +40,7 @@
         <span class="user-role">Médico</span>
       </div>
       <i class="fas fa-chevron-down user-arrow"></i>
+      </div>
     </div>
     
     <!-- User Menu Dropdown -->
